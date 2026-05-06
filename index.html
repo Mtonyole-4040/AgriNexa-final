@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AgriNEXA AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,71 +17,65 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:
-linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.60)),
-url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
 min-height:100vh;
-padding:25px;
-color:white;
+padding:30px;
+overflow-x:hidden;
 }
 
-.hidden{
-display:none;
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:-1;
 }
 
-.center-screen{
-min-height:100vh;
+.center{
 display:flex;
 justify-content:center;
 align-items:center;
+min-height:100vh;
 }
 
-.glass-card{
-background:rgba(15,15,15,0.88);
-border-radius:30px;
-padding:40px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 35px rgba(110,255,84,0.35);
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.login-box{
+.card{
 width:100%;
-max-width:500px;
-text-align:center;
+max-width:650px;
+background:rgba(18,18,18,0.92);
+border-radius:30px;
+padding:45px;
+box-shadow:0 0 40px rgba(111,255,0,0.35);
+backdrop-filter:blur(10px);
 }
 
 .logo{
-font-size:68px;
+font-size:60px;
 font-weight:800;
-color:#7CFF4F;
-margin-bottom:10px;
-}
-
-.logo-small{
-font-size:65px;
+color:#7CFF45;
+text-align:center;
 margin-bottom:10px;
 }
 
 .subtitle{
-font-size:18px;
-line-height:1.8;
-color:#ececec;
+text-align:center;
+color:white;
+font-size:22px;
+line-height:1.7;
 margin-bottom:35px;
 }
 
-input,
-select{
+input,select{
 width:100%;
 padding:18px;
-margin-bottom:18px;
 border:none;
-border-radius:16px;
-font-size:16px;
 outline:none;
+border-radius:16px;
+margin-bottom:20px;
+font-size:18px;
 }
 
 button{
@@ -90,10 +83,9 @@ width:100%;
 padding:18px;
 border:none;
 border-radius:16px;
-background:#7CFF4F;
-font-size:18px;
+background:#7CFF45;
+font-size:22px;
 font-weight:700;
-color:#111;
 cursor:pointer;
 transition:0.3s;
 }
@@ -102,142 +94,117 @@ button:hover{
 transform:scale(1.02);
 }
 
-.ai-box{
-width:100%;
-max-width:700px;
-}
-
-.ai-title{
-font-size:55px;
-font-weight:800;
-color:#7CFF4F;
-margin-bottom:25px;
-text-align:center;
-}
-
 .question-box{
-background:rgba(255,255,255,0.08);
+background:#3b3b3b;
 padding:25px;
-border-radius:20px;
+border-radius:18px;
+color:white;
 font-size:24px;
-line-height:1.7;
 margin-bottom:20px;
+font-weight:600;
+line-height:1.6;
 }
 
 .dashboard{
-max-width:1450px;
-margin:auto;
+display:none;
+padding-top:20px;
 }
 
 .dashboard-title{
 font-size:60px;
 font-weight:800;
-color:#7CFF4F;
-margin-bottom:30px;
+color:#7CFF45;
+margin-bottom:25px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
-.card{
-background:rgba(15,15,15,0.88);
-padding:28px;
-border-radius:28px;
-box-shadow:0 0 20px rgba(110,255,84,0.15);
-border:1px solid rgba(255,255,255,0.05);
+.box{
+background:rgba(18,18,18,0.92);
+border-radius:25px;
+padding:25px;
+color:white;
+box-shadow:0 0 25px rgba(124,255,69,0.18);
 }
 
-.card h3{
-font-size:30px;
+.box h2{
+color:#7CFF45;
+font-size:34px;
 margin-bottom:18px;
-color:#7CFF4F;
 }
 
-.big-number{
-font-size:58px;
+.big{
+font-size:55px;
 font-weight:800;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-.card p{
-font-size:16px;
+.small{
+font-size:17px;
 line-height:1.8;
-color:#ededed;
-}
-
-.alert{
-background:rgba(255,255,255,0.08);
-padding:14px;
-border-radius:14px;
-margin-top:12px;
 }
 
 .progress{
-height:10px;
-background:#444;
-border-radius:50px;
+width:100%;
+height:12px;
+background:#555;
+border-radius:20px;
 overflow:hidden;
-margin-top:18px;
+margin-top:20px;
 }
 
 .progress-bar{
 height:100%;
-width:85%;
-background:#7CFF4F;
+width:75%;
+background:#7CFF45;
 }
 
-.status{
-display:inline-block;
-padding:10px 18px;
-background:#7CFF4F;
-color:#111;
-font-weight:700;
-border-radius:50px;
-margin-bottom:18px;
+.ai-message{
+font-size:18px;
+line-height:1.9;
+margin-top:15px;
 }
 
-@media(max-width:768px){
+@media(max-width:700px){
 
 .logo{
-font-size:50px;
-}
-
-.ai-title{
-font-size:38px;
+font-size:45px;
 }
 
 .dashboard-title{
-font-size:40px;
+font-size:42px;
 }
 
-body{
-padding:15px;
+.card{
+padding:30px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
+
+<div class="overlay"></div>
 
 <!-- LOGIN PAGE -->
 
-<section id="loginPage" class="center-screen">
+<div class="center" id="loginPage">
 
-<div class="glass-card login-box">
+<div class="card">
 
-<div class="logo-small">🌱</div>
+<div style="text-align:center;font-size:60px;">🌱</div>
 
-<h1 class="logo">AgriNEXA</h1>
+<div class="logo">AgriNEXA</div>
 
-<p class="subtitle">
+<div class="subtitle">
 AI Copilot for Smart Farming.<br>
 From crop planning to market profit and farmer wellbeing.
-</p>
+</div>
 
 <input type="email" placeholder="Enter Email">
 
@@ -249,17 +216,17 @@ Launch Smart Farm
 
 </div>
 
-</section>
+</div>
 
-<!-- AI QUESTIONS -->
+<!-- ONBOARDING PAGE -->
 
-<section id="onboardingPage" class="hidden center-screen">
+<div class="center" id="onboardingPage" style="display:none;">
 
-<div class="glass-card ai-box">
+<div class="card">
 
-<h1 class="ai-title">
+<div class="logo" style="font-size:52px;">
 AgriNEXA AI Assistant
-</h1>
+</div>
 
 <div class="question-box" id="questionBox">
 Loading...
@@ -268,8 +235,7 @@ Loading...
 <input
 type="text"
 id="answerInput"
-placeholder="Type your answer"
->
+placeholder="Type your answer">
 
 <button onclick="nextQuestion()">
 Continue
@@ -277,55 +243,78 @@ Continue
 
 </div>
 
-</section>
+</div>
 
 <!-- DASHBOARD -->
 
-<section id="dashboardPage" class="hidden">
+<div class="dashboard" id="dashboardPage">
 
-<div class="dashboard">
-
-<h1 class="dashboard-title">
+<div class="dashboard-title">
 AgriNEXA Intelligence Center
-</h1>
+</div>
 
 <div class="grid">
 
-<!-- PROFILE -->
+<div class="box">
+<h2>👨‍🌾 Farmer Profile</h2>
 
-<div class="card">
+<div class="small">
+<b>Name:</b> <span id="farmerName"></span><br><br>
 
-<h3>👨‍🌾 Farmer Profile</h3>
+<b>Region:</b> <span id="regionName"></span><br><br>
 
-<p><strong>Name:</strong> <span id="farmerName">--</span></p>
+<b>Selected Crop:</b> <span id="cropResult"></span><br><br>
 
-<p><strong>Region:</strong> <span id="regionName">--</span></p>
-
-<p><strong>Budget:</strong> <span id="budgetName">--</span></p>
-
-<p style="margin-top:15px;">
-<strong>Recommended Crop:</strong>
-</p>
-
-<p id="cropResult">
-Waiting for AI analysis...
-</p>
-
+<b>Budget:</b> <span id="budgetName"></span>
+</div>
 </div>
 
-<!-- HEALTH -->
+<div class="box">
+<h2>🌱 Farm Health</h2>
 
-<div class="card">
-
-<h3>🌿 Farm Health</h3>
-
-<div class="big-number" id="farmHealth">
---
+<div class="big" id="farmHealth">
+92%
 </div>
 
-<p>
-AI detects crop performance and environmental conditions.
-</p>
+<div class="small">
+AI detects strong crop performance and healthy environmental conditions.
+</div>
+</div>
+
+<div class="box">
+<h2>💰 Expected Profit</h2>
+
+<div class="big" id="profitForecast">
+460K
+</div>
+
+<div class="small">
+Projected seasonal profit based on AI crop intelligence and market demand.
+</div>
+</div>
+
+<div class="box">
+<h2>🌦 Weather Risk</h2>
+
+<div class="big" id="weatherRisk">
+LOW
+</div>
+
+<div class="small">
+No major climate disruption expected this farming cycle.
+</div>
+</div>
+
+<div class="box">
+<h2>🧠 Farmer Wellbeing</h2>
+
+<div
+class="small"
+id="wellbeingStatus">
+
+Stable mental condition detected.
+
+</div>
 
 <div class="progress">
 <div class="progress-bar"></div>
@@ -333,162 +322,81 @@ AI detects crop performance and environmental conditions.
 
 </div>
 
-<!-- WEATHER -->
+<div class="box">
+<h2>🤖 AI Farming Assistant</h2>
 
-<div class="card">
+<div
+class="ai-message"
+id="aiMessage">
 
-<h3>🌦 Weather Risk</h3>
-
-<div class="big-number" id="weatherRisk">
---
-</div>
-
-<p>
-Real-time climate intelligence and rainfall prediction.
-</p>
+AI analysis loading...
 
 </div>
-
-<!-- PROFIT -->
-
-<div class="card">
-
-<h3>💰 Expected Profit</h3>
-
-<div class="big-number" id="profitForecast">
---
 </div>
 
-<p>
-Projected seasonal revenue powered by AI market intelligence.
-</p>
-
-</div>
-
-<!-- AI -->
-
-<div class="card">
-
-<h3>🤖 AI Farming Assistant</h3>
-
-<p id="aiMessage">
-AI waiting for farmer data...
-</p>
-
-<input type="text" placeholder="Ask AgriNEXA AI anything">
-
-<button style="margin-top:15px;">
-Ask AI
-</button>
-
-</div>
-
-<!-- WELLBEING -->
-
-<div class="card">
-
-<h3>💖 Farmer Wellbeing</h3>
-
-<p id="wellbeingStatus">
-Waiting for wellbeing analysis...
-</p>
-
-<div class="progress">
-<div class="progress-bar" style="width:75%;"></div>
-</div>
-
-</div>
-
-<!-- JOURNEY -->
-
-<div class="card">
-
-<h3>🧭 AI Farm Journey</h3>
-
-<p>✅ Soil Analysis</p>
-<p>✅ Crop Recommendation</p>
-<p>✅ Disease Monitoring</p>
-<p>⚪ Harvest Planning</p>
-<p>⚪ Market Selling</p>
-
-<div class="progress">
-<div class="progress-bar" style="width:60%;"></div>
-</div>
-
-</div>
-
-<!-- SCANNER -->
-
-<div class="card">
-
-<h3>📷 Crop Disease Scanner</h3>
+<div class="box">
+<h2>📸 Crop Disease Scanner</h2>
 
 <img
 src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
-style="width:100%;border-radius:18px;margin-bottom:18px;"
->
+style="
+width:100%;
+border-radius:20px;
+margin-bottom:18px;
+">
 
 <input type="file">
 
-<button style="margin-top:15px;">
+<button style="margin-top:10px;">
 Scan Plant
 </button>
 
-<p style="margin-top:15px;">
-AI waiting for crop scan...
-</p>
+</div>
+
+<div class="box">
+<h2>🌍 Market Intelligence</h2>
+
+<div class="small">
+📍 Best Market: Arusha City<br><br>
+
+💵 Coffee Price: 12,000 TZS/kg<br><br>
+
+📈 Demand Level: HIGH<br><br>
+
+📊 Prices expected to rise next week
+</div>
+</div>
+
+<div class="box">
+<h2>📊 Smart Profit Forecast</h2>
+
+<input type="number" placeholder="Seeds Cost">
+
+<input type="number" placeholder="Fertilizer Cost">
+
+<input type="number" placeholder="Labour Cost">
+
+<button>
+Generate AI Forecast
+</button>
 
 </div>
 
-<!-- MARKET -->
+<div class="box">
+<h2>🛡 AgriNEXA Farm Shield</h2>
 
-<div class="card">
+<div class="small">
+✅ Climate Damage Protection<br><br>
 
-<h3>🌍 Market Intelligence</h3>
+✅ Pest Outbreak Protection<br><br>
 
-<p>📍 Best Market: Arusha City</p>
+✅ Disease Loss Protection<br><br>
 
-<p>📈 Market Demand: HIGH</p>
+✅ Extreme Rainfall Coverage<br><br>
 
-<p>💵 Selling Prices Rising</p>
-
-<h3 style="margin-top:25px;">
-🚨 Live AI Alerts
-</h3>
-
-<div class="alert">
-🌧 Rain expected in 3 days.
+💵 Monthly Protection:
+18,000 TZS
 </div>
-
-<div class="alert">
-📊 Coffee demand increased by 12%.
-</div>
-
-<div class="alert">
-🦠 Early disease risk nearby.
-</div>
-
-</div>
-
-<!-- INSURANCE -->
-
-<div class="card">
-
-<h3>🛡 AgriNEXA Farm Shield</h3>
-
-<div class="status">
-INSURANCE OPTIONAL
-</div>
-
-<p>✅ Crop Failure Protection</p>
-<p>✅ Climate Damage</p>
-<p>✅ Disease Loss</p>
-<p>✅ Extreme Rainfall</p>
-
-<p style="margin-top:18px;">
-Monthly Protection:
-<strong>18,000 TZS</strong>
-</p>
 
 <button style="margin-top:20px;">
 Activate Farm Shield
@@ -496,11 +404,29 @@ Activate Farm Shield
 
 </div>
 
+<div class="box">
+<h2>💗 Emotional Support AI</h2>
+
+<select>
+<option>😊 Motivated</option>
+<option>😟 Stressed</option>
+<option>😴 Tired</option>
+<option>😔 Worried</option>
+</select>
+
+<button>
+Check Mental Support
+</button>
+
+<div class="small" style="margin-top:20px;">
+AgriNEXA wellness support ready.
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <script>
 
@@ -581,11 +507,11 @@ let currentQuestion = 0;
 
 function startOnboarding(){
 
-loginPage.classList.add("hidden");
+loginPage.style.display = "none";
 
-onboardingPage.classList.remove("hidden");
+dashboardPage.style.display = "none";
 
-dashboardPage.classList.add("hidden");
+onboardingPage.style.display = "flex";
 
 currentQuestion = 0;
 
@@ -593,8 +519,6 @@ questionBox.innerHTML =
 questions[currentQuestion].question;
 
 answerInput.value = "";
-
-answerInput.focus();
 
 }
 
@@ -624,8 +548,6 @@ questions[currentQuestion].question;
 
 answerInput.value = "";
 
-answerInput.focus();
-
 }
 else{
 
@@ -637,9 +559,9 @@ generateDashboard();
 
 function generateDashboard(){
 
-onboardingPage.classList.add("hidden");
+onboardingPage.style.display = "none";
 
-dashboardPage.classList.remove("hidden");
+dashboardPage.style.display = "block";
 
 farmerName.innerHTML =
 farmerData.name;
@@ -727,11 +649,11 @@ behavior:"smooth"
 
 window.onload = function(){
 
-loginPage.classList.remove("hidden");
+loginPage.style.display = "flex";
 
-onboardingPage.classList.add("hidden");
+onboardingPage.style.display = "none";
 
-dashboardPage.classList.add("hidden");
+dashboardPage.style.display = "none";
 
 }
 
