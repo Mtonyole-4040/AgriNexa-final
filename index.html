@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>AgriNEXA AI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,204 +18,204 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 min-height:100vh;
-overflow-x:hidden;
 color:white;
-}
-
-.overlay{
-background:rgba(0,0,0,0.55);
-min-height:100vh;
-padding:20px;
+padding:30px;
 }
 
 .hidden{
 display:none;
 }
 
-.center{
+.center-screen{
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
 }
 
-.login-card{
-width:100%;
-max-width:430px;
-background:rgba(20,20,20,0.94);
-padding:45px 35px;
-border-radius:30px;
-box-shadow:0 0 45px rgba(114,255,79,0.35);
-text-align:center;
+.glass-card{
+background:rgba(10,10,10,0.88);
 backdrop-filter:blur(10px);
+border-radius:30px;
+padding:40px;
+box-shadow:0 0 30px rgba(110,255,84,0.35);
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.login-box{
+width:100%;
+max-width:480px;
+text-align:center;
 }
 
 .logo{
-font-size:65px;
+font-size:64px;
 font-weight:800;
-color:#72ff4f;
-margin-top:15px;
+color:#7CFF4F;
+margin-bottom:10px;
+}
+
+.logo-small{
+font-size:60px;
+margin-bottom:10px;
 }
 
 .subtitle{
-margin-top:15px;
 font-size:18px;
-line-height:1.7;
-color:#f2f2f2;
+line-height:1.8;
+color:#e9e9e9;
+margin-bottom:35px;
 }
 
-.input{
+input,
+select{
 width:100%;
 padding:18px;
-margin-top:18px;
+margin-bottom:18px;
 border:none;
 border-radius:16px;
-font-size:17px;
+font-size:16px;
 outline:none;
+background:white;
 }
 
-.btn{
+button{
 width:100%;
 padding:18px;
-margin-top:20px;
 border:none;
 border-radius:16px;
-background:#72ff4f;
-font-size:20px;
+background:#7CFF4F;
+color:#111;
+font-size:18px;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
 }
 
-.btn:hover{
+button:hover{
 transform:scale(1.02);
 }
 
-.chat-box{
-max-width:800px;
-margin:auto;
-padding-top:60px;
+.ai-box{
+max-width:700px;
+width:100%;
 }
 
-.chat-title{
-font-size:52px;
+.ai-title{
+font-size:55px;
 font-weight:800;
-color:#72ff4f;
-margin-bottom:15px;
+color:#7CFF4F;
+margin-bottom:25px;
+text-align:center;
 }
 
-.ai-message{
-background:rgba(20,20,20,0.92);
-padding:24px;
-border-radius:22px;
-font-size:18px;
-line-height:1.8;
+.question-box{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:20px;
+font-size:24px;
+line-height:1.7;
 margin-bottom:20px;
 }
 
 .dashboard{
-padding:20px 10px 80px;
+max-width:1400px;
+margin:auto;
 }
 
 .dashboard-title{
-font-size:55px;
+font-size:58px;
 font-weight:800;
-color:#72ff4f;
+color:#7CFF4F;
 margin-bottom:30px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:22px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-background:rgba(20,20,20,0.92);
-padding:24px;
-border-radius:25px;
-backdrop-filter:blur(8px);
-box-shadow:0 0 25px rgba(114,255,79,0.15);
+background:rgba(10,10,10,0.88);
+padding:30px;
+border-radius:28px;
+box-shadow:0 0 20px rgba(110,255,84,0.18);
+border:1px solid rgba(255,255,255,0.05);
 }
 
-.card h2{
+.card h3{
 font-size:30px;
+color:#7CFF4F;
 margin-bottom:20px;
-color:#72ff4f;
 }
 
-.metric{
-font-size:58px;
+.big-number{
+font-size:55px;
 font-weight:800;
+margin-bottom:10px;
 }
 
-.small{
-font-size:15px;
-line-height:1.9;
+.card p{
+line-height:1.8;
+font-size:16px;
+color:#e7e7e7;
 }
 
-.progress{
-height:14px;
-background:#333;
-border-radius:20px;
-overflow:hidden;
-margin-top:18px;
-}
-
-.progress-bar{
-height:100%;
-width:82%;
-background:#72ff4f;
-}
-
-.crop-img{
-width:100%;
-border-radius:20px;
+.status{
+padding:10px 18px;
+display:inline-block;
+border-radius:50px;
+background:#7CFF4F;
+color:#111;
+font-weight:700;
 margin-bottom:15px;
 }
 
 .alert{
 background:rgba(255,255,255,0.08);
-padding:14px;
-border-left:4px solid #72ff4f;
-border-radius:12px;
+padding:15px;
+border-radius:14px;
 margin-top:12px;
-font-size:14px;
 }
 
-ul{
-padding-left:18px;
-line-height:2;
+.progress{
+height:10px;
+background:#444;
+border-radius:50px;
+overflow:hidden;
+margin-top:15px;
 }
 
-.status{
-display:inline-block;
-background:#72ff4f;
-padding:10px 18px;
-border-radius:30px;
-font-weight:700;
-color:black;
-margin-bottom:15px;
+.progress-bar{
+height:100%;
+width:85%;
+background:#7CFF4F;
 }
 
 @media(max-width:768px){
 
+body{
+padding:15px;
+}
+
 .logo{
-font-size:52px;
+font-size:48px;
+}
+
+.ai-title{
+font-size:38px;
 }
 
 .dashboard-title{
-font-size:38px;
-}
-
-.chat-title{
-font-size:38px;
-}
-
-.metric{
-font-size:44px;
+font-size:40px;
 }
 
 }
@@ -224,28 +225,26 @@ font-size:44px;
 
 <body>
 
-<div class="overlay">
+<!-- LOGIN PAGE -->
 
-<!-- LOGIN -->
+<section id="loginPage" class="center-screen">
 
-<section id="loginPage" class="center">
+<div class="glass-card login-box">
 
-<div class="login-card">
+<div class="logo-small">🌱</div>
 
-<div style="font-size:50px;">🌱</div>
+<h1 class="logo">AgriNEXA</h1>
 
-<div class="logo">AgriNEXA</div>
-
-<div class="subtitle">
+<p class="subtitle">
 AI Copilot for Smart Farming.<br>
 From crop planning to market profit and farmer wellbeing.
-</div>
+</p>
 
-<input class="input" type="email" placeholder="Enter Email">
+<input type="email" placeholder="Enter Email">
 
-<input class="input" type="password" placeholder="Password">
+<input type="password" placeholder="Password">
 
-<button class="btn" onclick="startOnboarding()">
+<button onclick="startOnboarding()">
 Launch Smart Farm
 </button>
 
@@ -253,24 +252,25 @@ Launch Smart Farm
 
 </section>
 
-<!-- ONBOARDING -->
+<!-- AI ONBOARDING -->
 
-<section id="onboardingPage" class="hidden">
+<section id="onboardingPage" class="hidden center-screen">
 
-<div class="chat-box">
+<div class="glass-card ai-box">
 
-<div class="chat-title">
-AgriNEXA AI Assistant
+<h1 class="ai-title">AgriNEXA AI Assistant</h1>
+
+<div class="question-box" id="questionBox">
+Loading...
 </div>
 
-<div class="ai-message" id="questionBox">
-👋 Hello farmer.<br><br>
-What is your name?
-</div>
+<input
+type="text"
+id="answerInput"
+placeholder="Type your answer"
+>
 
-<input id="answerInput" class="input" placeholder="Type your answer">
-
-<button class="btn" onclick="nextQuestion()">
+<button onclick="nextQuestion()">
 Continue
 </button>
 
@@ -284,50 +284,43 @@ Continue
 
 <div class="dashboard">
 
-<div class="dashboard-title">
+<h1 class="dashboard-title">
 AgriNEXA Intelligence Center
-</div>
+</h1>
 
 <div class="grid">
 
-<div class="card">
-<h2>🌾 Farm Health</h2>
-<div class="metric">92%</div>
+<!-- PROFILE -->
 
-<p class="small">
-AI detects strong crop performance and healthy environmental conditions.
+<div class="card">
+
+<h3>👨‍🌾 Farmer Profile</h3>
+
+<p><strong>Name:</strong> <span id="farmerName">--</span></p>
+
+<p><strong>Region:</strong> <span id="regionName">--</span></p>
+
+<p><strong>Selected Crop:</strong></p>
+
+<p id="cropResult">
+Waiting for AI recommendation...
 </p>
+
 </div>
 
+<!-- FARM HEALTH -->
+
 <div class="card">
-<h2>💰 Expected Profit</h2>
 
-<div class="metric">460K</div>
+<h3>🌿 Farm Health</h3>
 
-<p class="small">
-Projected seasonal profit based on AI crop intelligence and market demand.
-</p>
+<div class="big-number" id="farmHealth">
+--
 </div>
 
-<div class="card">
-<h2>🌦 Weather Risk</h2>
-
-<div class="metric">LOW</div>
-
-<p class="small">
-No major climate disruption expected this farming cycle.
-</p>
-</div>
-
-<div class="card">
-<h2>🧠 Farmer Wellbeing</h2>
-
-<p class="small">
-Stress Level: LOW<br>
-Motivation: HIGH<br>
-Mental Energy: STABLE<br><br>
-
-AgriNEXA continuously supports farmer wellbeing across all farming stages.
+<p>
+AI analyzes environmental conditions,
+soil readiness and crop potential.
 </p>
 
 <div class="progress">
@@ -336,156 +329,166 @@ AgriNEXA continuously supports farmer wellbeing across all farming stages.
 
 </div>
 
-<div class="card">
-<h2>🧭 AI Farm Journey</h2>
-
-<ul>
-<li>✅ Soil Analysis</li>
-<li>✅ Crop Recommendation</li>
-<li>✅ Disease Monitoring</li>
-<li>🟡 Growth Tracking</li>
-<li>⚪ Harvest Planning</li>
-<li>⚪ Market Selling</li>
-</ul>
-
-<div class="progress">
-<div class="progress-bar"></div>
-</div>
-
-</div>
+<!-- WEATHER -->
 
 <div class="card">
-<h2>🤖 AI Farming Assistant</h2>
 
-<p class="small">
-Hello farmer 👋<br><br>
+<h3>🌦 Weather Risk</h3>
 
-Your selected region has strong potential for coffee farming with high market demand and low rainfall risk.
+<div class="big-number" id="weatherRisk">
+--
+</div>
+
+<p>
+Climate monitoring and seasonal
+prediction intelligence.
 </p>
 
-<input class="input" placeholder="Ask AgriNEXA AI anything">
+</div>
 
-<button class="btn">
+<!-- PROFIT -->
+
+<div class="card">
+
+<h3>💰 Expected Profit</h3>
+
+<div class="big-number" id="profitForecast">
+--
+</div>
+
+<p>
+Projected seasonal revenue generated
+from AI market intelligence.
+</p>
+
+</div>
+
+<!-- AI ASSISTANT -->
+
+<div class="card">
+
+<h3>🤖 AI Farming Assistant</h3>
+
+<p id="aiMessage">
+AI waiting for farmer data...
+</p>
+
+<input type="text" placeholder="Ask AgriNEXA AI anything">
+
+<button style="margin-top:15px;">
 Ask AI
 </button>
 
 </div>
 
+<!-- WELLBEING -->
+
 <div class="card">
-<h2>📷 Crop Disease Scanner</h2>
 
-<img class="crop-img" src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop">
+<h3>💖 Farmer Wellbeing</h3>
 
-<input type="file" class="input">
+<p id="wellbeingStatus">
+Waiting for wellbeing analysis...
+</p>
 
-<button class="btn">
+<div class="progress">
+<div class="progress-bar" style="width:78%;"></div>
+</div>
+
+</div>
+
+<!-- JOURNEY -->
+
+<div class="card">
+
+<h3>🧭 AI Farm Journey</h3>
+
+<p>✅ Soil Analysis</p>
+<p>✅ Crop Recommendation</p>
+<p>✅ Disease Monitoring</p>
+<p>⚪ Harvest Planning</p>
+<p>⚪ Market Selling</p>
+
+<div class="progress">
+<div class="progress-bar" style="width:60%;"></div>
+</div>
+
+</div>
+
+<!-- CROP SCANNER -->
+
+<div class="card">
+
+<h3>📷 Crop Disease Scanner</h3>
+
+<img
+src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+style="width:100%;border-radius:18px;margin-bottom:18px;"
+>
+
+<input type="file">
+
+<button style="margin-top:15px;">
 Scan Plant
 </button>
 
-<p class="small" style="margin-top:15px;">
+<p style="margin-top:15px;">
 AI waiting for crop scan...
 </p>
 
 </div>
 
+<!-- MARKET -->
+
 <div class="card">
-<h2>🌍 Market Intelligence</h2>
 
-<ul>
-<li>📍 Best Market: Arusha City</li>
-<li>💵 Coffee Price: 12,000 TZS/kg</li>
-<li>📈 Demand Level: HIGH</li>
-<li>📊 Prices expected to rise next week</li>
-</ul>
+<h3>🌍 Market Intelligence</h3>
 
-<h2 style="margin-top:25px;">🚨 Live AI Alerts</h2>
+<p>📍 Best Market: Arusha City</p>
+<p>💵 Demand Level: HIGH</p>
+<p>📈 Prices expected to rise next week</p>
+
+<h3 style="margin-top:25px;">
+🚨 Live AI Alerts
+</h3>
 
 <div class="alert">
-🌧 Rain expected in 3 days — delay fertilizer application.
+🌧 Rain expected in 3 days.
 </div>
 
 <div class="alert">
-📈 Coffee market demand increased by 12%.
+📊 Market demand increased by 12%.
 </div>
 
 <div class="alert">
 🦠 Early disease risk detected nearby.
 </div>
 
-<div class="alert">
-💡 Harvest within 6 days for maximum profit.
 </div>
 
-</div>
+<!-- INSURANCE -->
 
 <div class="card">
-<h2>📊 Smart Profit Forecast</h2>
 
-<input class="input" placeholder="Seeds Cost">
-
-<input class="input" placeholder="Fertilizer Cost">
-
-<input class="input" placeholder="Labour Cost">
-
-<button class="btn">
-Generate AI Forecast
-</button>
-
-<p class="small" style="margin-top:18px;">
-AI estimates projected seasonal revenue and profit growth based on spending patterns.
-</p>
-
-</div>
-
-<div class="card">
-<h2>🛡️ AgriNEXA Farm Shield</h2>
+<h3>🛡 AgriNEXA Farm Shield</h3>
 
 <div class="status">
-INSURANCE ACTIVE
+INSURANCE OPTIONAL
 </div>
 
-<p class="small">
+<p>✅ Climate Damage</p>
+<p>✅ Crop Failure Protection</p>
+<p>✅ Disease Loss</p>
+<p>✅ Extreme Rainfall</p>
 
-Coverage Includes:<br><br>
-
-✅ Climate Damage<br>
-✅ Pest Outbreak<br>
-✅ Disease Loss<br>
-✅ Extreme Rainfall<br>
-✅ Crop Failure Protection<br><br>
-
+<p style="margin-top:20px;">
 Monthly Protection:<br>
-18,000 TZS
+<strong>18,000 TZS</strong>
 </p>
 
-<button class="btn">
+<button style="margin-top:20px;">
 Activate Farm Shield
 </button>
-
-</div>
-
-<div class="card">
-<h2>❤️ Emotional Support AI</h2>
-
-<p class="small">
-“How are you feeling today as a farmer?”
-</p>
-
-<select class="input">
-<option>😊 Motivated</option>
-<option>😔 Stressed</option>
-<option>😟 Worried</option>
-<option>🔥 Confident</option>
-<option>😴 Tired</option>
-</select>
-
-<button class="btn">
-Check Mental Support
-</button>
-
-<p class="small" style="margin-top:18px;">
-AgriNEXA wellness support ready.
-</p>
 
 </div>
 
@@ -495,19 +498,48 @@ AgriNEXA wellness support ready.
 
 </section>
 
-</div>
-
 <script>
+
+const loginPage = document.getElementById("loginPage");
+const onboardingPage = document.getElementById("onboardingPage");
+const dashboardPage = document.getElementById("dashboardPage");
+
+const questionBox = document.getElementById("questionBox");
+const answerInput = document.getElementById("answerInput");
+
+const farmerName = document.getElementById("farmerName");
+const regionName = document.getElementById("regionName");
+
+const cropResult = document.getElementById("cropResult");
+const farmHealth = document.getElementById("farmHealth");
+const weatherRisk = document.getElementById("weatherRisk");
+const profitForecast = document.getElementById("profitForecast");
+const wellbeingStatus = document.getElementById("wellbeingStatus");
+const aiMessage = document.getElementById("aiMessage");
+
+let farmerData = {};
 
 const questions = [
 
-"What is your name?",
+{
+key:"name",
+question:"👋 Hello farmer, what is your name?"
+},
 
-"Which region are you farming in?",
+{
+key:"region",
+question:"📍 Which region are you farming in?"
+},
 
-"What crop are you interested in growing?",
+{
+key:"crop",
+question:"🌱 Which crop are you interested in growing?"
+},
 
-"How are you feeling about this farming season?"
+{
+key:"feeling",
+question:"💭 How are you feeling about this farming season?"
+}
 
 ];
 
@@ -515,36 +547,122 @@ let currentQuestion = 0;
 
 function startOnboarding(){
 
-document.getElementById("loginPage").classList.add("hidden");
+loginPage.classList.add("hidden");
 
-document.getElementById("onboardingPage").classList.remove("hidden");
+onboardingPage.classList.remove("hidden");
+
+questionBox.innerHTML = questions[0].question;
 
 }
 
 function nextQuestion(){
 
-const input = document.getElementById("answerInput").value;
+const answer = answerInput.value.trim();
 
-if(input.trim()===""){
+if(answer === ""){
+
+alert("Please answer first.");
+
 return;
+
 }
+
+farmerData[questions[currentQuestion].key] = answer;
 
 currentQuestion++;
 
 if(currentQuestion < questions.length){
 
-document.getElementById("questionBox").innerHTML =
-"🤖 " + questions[currentQuestion];
+questionBox.innerHTML =
+questions[currentQuestion].question;
 
-document.getElementById("answerInput").value = "";
+answerInput.value = "";
 
 }else{
 
-document.getElementById("onboardingPage").classList.add("hidden");
-
-document.getElementById("dashboardPage").classList.remove("hidden");
+generateDashboard();
 
 }
+
+}
+
+function generateDashboard(){
+
+onboardingPage.classList.add("hidden");
+
+dashboardPage.classList.remove("hidden");
+
+farmerName.innerHTML = farmerData.name;
+
+regionName.innerHTML = farmerData.region;
+
+cropResult.innerHTML =
+farmerData.crop;
+
+const crop = farmerData.crop.toLowerCase();
+
+if(crop.includes("coffee")){
+
+farmHealth.innerHTML = "92%";
+
+weatherRisk.innerHTML = "LOW";
+
+profitForecast.innerHTML = "480K";
+
+aiMessage.innerHTML =
+"Coffee farming in " +
+farmerData.region +
+" has strong export demand and low climate risk.";
+
+}
+else if(crop.includes("maize")){
+
+farmHealth.innerHTML = "85%";
+
+weatherRisk.innerHTML = "MEDIUM";
+
+profitForecast.innerHTML = "320K";
+
+aiMessage.innerHTML =
+"Maize farming in " +
+farmerData.region +
+" shows stable market potential.";
+
+}
+else{
+
+farmHealth.innerHTML = "88%";
+
+weatherRisk.innerHTML = "LOW";
+
+profitForecast.innerHTML = "400K";
+
+aiMessage.innerHTML =
+"AI predicts positive farming potential in " +
+farmerData.region + ".";
+
+}
+
+const feeling =
+farmerData.feeling.toLowerCase();
+
+if(
+feeling.includes("stress") ||
+feeling.includes("tired") ||
+feeling.includes("worried")
+){
+
+wellbeingStatus.innerHTML =
+"⚠ Emotional stress detected. Wellness support activated.";
+
+}else{
+
+wellbeingStatus.innerHTML =
+"✅ Farmer wellbeing stable and supported.";
+
+}
+
+window.scrollTo(0,0);
 
 }
 
