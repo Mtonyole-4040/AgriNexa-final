@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AgriNEXA AI</title>
 
@@ -19,14 +19,14 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:
-linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)),
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.60)),
 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
 min-height:100vh;
+padding:25px;
 color:white;
-padding:30px;
 }
 
 .hidden{
@@ -41,36 +41,36 @@ align-items:center;
 }
 
 .glass-card{
-background:rgba(10,10,10,0.88);
-backdrop-filter:blur(10px);
+background:rgba(15,15,15,0.88);
 border-radius:30px;
 padding:40px;
-box-shadow:0 0 30px rgba(110,255,84,0.35);
-border:1px solid rgba(255,255,255,0.06);
+backdrop-filter:blur(10px);
+box-shadow:0 0 35px rgba(110,255,84,0.35);
+border:1px solid rgba(255,255,255,0.08);
 }
 
 .login-box{
 width:100%;
-max-width:480px;
+max-width:500px;
 text-align:center;
 }
 
 .logo{
-font-size:64px;
+font-size:68px;
 font-weight:800;
 color:#7CFF4F;
 margin-bottom:10px;
 }
 
 .logo-small{
-font-size:60px;
+font-size:65px;
 margin-bottom:10px;
 }
 
 .subtitle{
 font-size:18px;
 line-height:1.8;
-color:#e9e9e9;
+color:#ececec;
 margin-bottom:35px;
 }
 
@@ -83,7 +83,6 @@ border:none;
 border-radius:16px;
 font-size:16px;
 outline:none;
-background:white;
 }
 
 button{
@@ -92,9 +91,9 @@ padding:18px;
 border:none;
 border-radius:16px;
 background:#7CFF4F;
-color:#111;
 font-size:18px;
 font-weight:700;
+color:#111;
 cursor:pointer;
 transition:0.3s;
 }
@@ -104,8 +103,8 @@ transform:scale(1.02);
 }
 
 .ai-box{
-max-width:700px;
 width:100%;
+max-width:700px;
 }
 
 .ai-title{
@@ -126,12 +125,12 @@ margin-bottom:20px;
 }
 
 .dashboard{
-max-width:1400px;
+max-width:1450px;
 margin:auto;
 }
 
 .dashboard-title{
-font-size:58px;
+font-size:60px;
 font-weight:800;
 color:#7CFF4F;
 margin-bottom:30px;
@@ -139,49 +138,39 @@ margin-bottom:30px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
 .card{
-background:rgba(10,10,10,0.88);
-padding:30px;
+background:rgba(15,15,15,0.88);
+padding:28px;
 border-radius:28px;
-box-shadow:0 0 20px rgba(110,255,84,0.18);
+box-shadow:0 0 20px rgba(110,255,84,0.15);
 border:1px solid rgba(255,255,255,0.05);
 }
 
 .card h3{
 font-size:30px;
+margin-bottom:18px;
 color:#7CFF4F;
-margin-bottom:20px;
 }
 
 .big-number{
-font-size:55px;
+font-size:58px;
 font-weight:800;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .card p{
-line-height:1.8;
 font-size:16px;
-color:#e7e7e7;
-}
-
-.status{
-padding:10px 18px;
-display:inline-block;
-border-radius:50px;
-background:#7CFF4F;
-color:#111;
-font-weight:700;
-margin-bottom:15px;
+line-height:1.8;
+color:#ededed;
 }
 
 .alert{
 background:rgba(255,255,255,0.08);
-padding:15px;
+padding:14px;
 border-radius:14px;
 margin-top:12px;
 }
@@ -191,7 +180,7 @@ height:10px;
 background:#444;
 border-radius:50px;
 overflow:hidden;
-margin-top:15px;
+margin-top:18px;
 }
 
 .progress-bar{
@@ -200,14 +189,20 @@ width:85%;
 background:#7CFF4F;
 }
 
-@media(max-width:768px){
-
-body{
-padding:15px;
+.status{
+display:inline-block;
+padding:10px 18px;
+background:#7CFF4F;
+color:#111;
+font-weight:700;
+border-radius:50px;
+margin-bottom:18px;
 }
 
+@media(max-width:768px){
+
 .logo{
-font-size:48px;
+font-size:50px;
 }
 
 .ai-title{
@@ -216,6 +211,10 @@ font-size:38px;
 
 .dashboard-title{
 font-size:40px;
+}
+
+body{
+padding:15px;
 }
 
 }
@@ -252,13 +251,15 @@ Launch Smart Farm
 
 </section>
 
-<!-- AI ONBOARDING -->
+<!-- AI QUESTIONS -->
 
 <section id="onboardingPage" class="hidden center-screen">
 
 <div class="glass-card ai-box">
 
-<h1 class="ai-title">AgriNEXA AI Assistant</h1>
+<h1 class="ai-title">
+AgriNEXA AI Assistant
+</h1>
 
 <div class="question-box" id="questionBox">
 Loading...
@@ -300,15 +301,19 @@ AgriNEXA Intelligence Center
 
 <p><strong>Region:</strong> <span id="regionName">--</span></p>
 
-<p><strong>Selected Crop:</strong></p>
+<p><strong>Budget:</strong> <span id="budgetName">--</span></p>
+
+<p style="margin-top:15px;">
+<strong>Recommended Crop:</strong>
+</p>
 
 <p id="cropResult">
-Waiting for AI recommendation...
+Waiting for AI analysis...
 </p>
 
 </div>
 
-<!-- FARM HEALTH -->
+<!-- HEALTH -->
 
 <div class="card">
 
@@ -319,8 +324,7 @@ Waiting for AI recommendation...
 </div>
 
 <p>
-AI analyzes environmental conditions,
-soil readiness and crop potential.
+AI detects crop performance and environmental conditions.
 </p>
 
 <div class="progress">
@@ -340,8 +344,7 @@ soil readiness and crop potential.
 </div>
 
 <p>
-Climate monitoring and seasonal
-prediction intelligence.
+Real-time climate intelligence and rainfall prediction.
 </p>
 
 </div>
@@ -357,13 +360,12 @@ prediction intelligence.
 </div>
 
 <p>
-Projected seasonal revenue generated
-from AI market intelligence.
+Projected seasonal revenue powered by AI market intelligence.
 </p>
 
 </div>
 
-<!-- AI ASSISTANT -->
+<!-- AI -->
 
 <div class="card">
 
@@ -392,7 +394,7 @@ Waiting for wellbeing analysis...
 </p>
 
 <div class="progress">
-<div class="progress-bar" style="width:78%;"></div>
+<div class="progress-bar" style="width:75%;"></div>
 </div>
 
 </div>
@@ -415,7 +417,7 @@ Waiting for wellbeing analysis...
 
 </div>
 
-<!-- CROP SCANNER -->
+<!-- SCANNER -->
 
 <div class="card">
 
@@ -445,8 +447,10 @@ AI waiting for crop scan...
 <h3>🌍 Market Intelligence</h3>
 
 <p>📍 Best Market: Arusha City</p>
-<p>💵 Demand Level: HIGH</p>
-<p>📈 Prices expected to rise next week</p>
+
+<p>📈 Market Demand: HIGH</p>
+
+<p>💵 Selling Prices Rising</p>
 
 <h3 style="margin-top:25px;">
 🚨 Live AI Alerts
@@ -457,11 +461,11 @@ AI waiting for crop scan...
 </div>
 
 <div class="alert">
-📊 Market demand increased by 12%.
+📊 Coffee demand increased by 12%.
 </div>
 
 <div class="alert">
-🦠 Early disease risk detected nearby.
+🦠 Early disease risk nearby.
 </div>
 
 </div>
@@ -476,13 +480,13 @@ AI waiting for crop scan...
 INSURANCE OPTIONAL
 </div>
 
-<p>✅ Climate Damage</p>
 <p>✅ Crop Failure Protection</p>
+<p>✅ Climate Damage</p>
 <p>✅ Disease Loss</p>
 <p>✅ Extreme Rainfall</p>
 
-<p style="margin-top:20px;">
-Monthly Protection:<br>
+<p style="margin-top:18px;">
+Monthly Protection:
 <strong>18,000 TZS</strong>
 </p>
 
@@ -500,22 +504,47 @@ Activate Farm Shield
 
 <script>
 
-const loginPage = document.getElementById("loginPage");
-const onboardingPage = document.getElementById("onboardingPage");
-const dashboardPage = document.getElementById("dashboardPage");
+const loginPage =
+document.getElementById("loginPage");
 
-const questionBox = document.getElementById("questionBox");
-const answerInput = document.getElementById("answerInput");
+const onboardingPage =
+document.getElementById("onboardingPage");
 
-const farmerName = document.getElementById("farmerName");
-const regionName = document.getElementById("regionName");
+const dashboardPage =
+document.getElementById("dashboardPage");
 
-const cropResult = document.getElementById("cropResult");
-const farmHealth = document.getElementById("farmHealth");
-const weatherRisk = document.getElementById("weatherRisk");
-const profitForecast = document.getElementById("profitForecast");
-const wellbeingStatus = document.getElementById("wellbeingStatus");
-const aiMessage = document.getElementById("aiMessage");
+const questionBox =
+document.getElementById("questionBox");
+
+const answerInput =
+document.getElementById("answerInput");
+
+const farmerName =
+document.getElementById("farmerName");
+
+const regionName =
+document.getElementById("regionName");
+
+const budgetName =
+document.getElementById("budgetName");
+
+const cropResult =
+document.getElementById("cropResult");
+
+const farmHealth =
+document.getElementById("farmHealth");
+
+const weatherRisk =
+document.getElementById("weatherRisk");
+
+const profitForecast =
+document.getElementById("profitForecast");
+
+const wellbeingStatus =
+document.getElementById("wellbeingStatus");
+
+const aiMessage =
+document.getElementById("aiMessage");
 
 let farmerData = {};
 
@@ -533,7 +562,12 @@ question:"📍 Which region are you farming in?"
 
 {
 key:"crop",
-question:"🌱 Which crop are you interested in growing?"
+question:"🌱 Which crop do you want to grow?"
+},
+
+{
+key:"budget",
+question:"💰 What is your farming budget?"
 },
 
 {
@@ -551,13 +585,23 @@ loginPage.classList.add("hidden");
 
 onboardingPage.classList.remove("hidden");
 
-questionBox.innerHTML = questions[0].question;
+dashboardPage.classList.add("hidden");
+
+currentQuestion = 0;
+
+questionBox.innerHTML =
+questions[currentQuestion].question;
+
+answerInput.value = "";
+
+answerInput.focus();
 
 }
 
 function nextQuestion(){
 
-const answer = answerInput.value.trim();
+const answer =
+answerInput.value.trim();
 
 if(answer === ""){
 
@@ -567,7 +611,9 @@ return;
 
 }
 
-farmerData[questions[currentQuestion].key] = answer;
+farmerData[
+questions[currentQuestion].key
+] = answer;
 
 currentQuestion++;
 
@@ -578,7 +624,10 @@ questions[currentQuestion].question;
 
 answerInput.value = "";
 
-}else{
+answerInput.focus();
+
+}
+else{
 
 generateDashboard();
 
@@ -592,14 +641,20 @@ onboardingPage.classList.add("hidden");
 
 dashboardPage.classList.remove("hidden");
 
-farmerName.innerHTML = farmerData.name;
+farmerName.innerHTML =
+farmerData.name;
 
-regionName.innerHTML = farmerData.region;
+regionName.innerHTML =
+farmerData.region;
+
+budgetName.innerHTML =
+farmerData.budget;
 
 cropResult.innerHTML =
 farmerData.crop;
 
-const crop = farmerData.crop.toLowerCase();
+const crop =
+farmerData.crop.toLowerCase();
 
 if(crop.includes("coffee")){
 
@@ -612,7 +667,7 @@ profitForecast.innerHTML = "480K";
 aiMessage.innerHTML =
 "Coffee farming in " +
 farmerData.region +
-" has strong export demand and low climate risk.";
+" shows strong export demand, low rainfall risk and high profitability.";
 
 }
 else if(crop.includes("maize")){
@@ -626,7 +681,7 @@ profitForecast.innerHTML = "320K";
 aiMessage.innerHTML =
 "Maize farming in " +
 farmerData.region +
-" shows stable market potential.";
+" has stable growth potential and seasonal demand.";
 
 }
 else{
@@ -638,7 +693,7 @@ weatherRisk.innerHTML = "LOW";
 profitForecast.innerHTML = "400K";
 
 aiMessage.innerHTML =
-"AI predicts positive farming potential in " +
+"AI predicts positive farming opportunities in " +
 farmerData.region + ".";
 
 }
@@ -648,21 +703,35 @@ farmerData.feeling.toLowerCase();
 
 if(
 feeling.includes("stress") ||
-feeling.includes("tired") ||
-feeling.includes("worried")
+feeling.includes("worried") ||
+feeling.includes("tired")
 ){
 
 wellbeingStatus.innerHTML =
-"⚠ Emotional stress detected. Wellness support activated.";
+"⚠ Emotional stress detected. AgriNEXA wellness support activated.";
 
-}else{
+}
+else{
 
 wellbeingStatus.innerHTML =
 "✅ Farmer wellbeing stable and supported.";
 
 }
 
-window.scrollTo(0,0);
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+window.onload = function(){
+
+loginPage.classList.remove("hidden");
+
+onboardingPage.classList.add("hidden");
+
+dashboardPage.classList.add("hidden");
 
 }
 
