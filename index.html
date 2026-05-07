@@ -4,42 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgriNEXA Login</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+}
+
+.login-box{
+width:430px;
+background:rgba(15,15,15,0.88);
+padding:40px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(229,255,0,0.3);
+text-align:center;
+}
+
+.logo{
+font-size:65px;
+font-weight:bold;
+color:#e5ff00;
+margin-bottom:10px;
+text-shadow:0 0 18px #e5ff00;
+}
+
+.subtitle{
+color:white;
+line-height:1.7;
+margin-bottom:25px;
+font-size:20px;
+}
+
+input{
+width:100%;
+padding:18px;
+margin-top:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:18px;
+margin-top:20px;
+border:none;
+border-radius:14px;
+background:#e5ff00;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.bottom{
+margin-top:18px;
+color:white;
+font-size:15px;
+}
+
+</style>
 </head>
 
-<body class="farm-bg">
+<body>
 
-<div class="overlay"></div>
+<div class="login-box">
 
-<div class="center-box">
+<div style="font-size:55px;">🌱</div>
 
-<div class="login-card">
+<div class="logo">AgriNEXA</div>
 
-<div class="logo">🌱</div>
-
-<h1>AgriNEXA</h1>
-
-<p>
+<div class="subtitle">
 AI Copilot for Smart Farming.<br>
 From crop planning to market profit and farmer wellbeing.
-</p>
+</div>
 
-<input type="email" placeholder="Enter Email">
+<input type="email" id="email" placeholder="Enter Email">
+
 <input type="password" placeholder="Password">
 
-<button onclick="goToOnboarding()">
+<button onclick="goNext()">
 Launch Smart Farm
 </button>
 
-<div class="powered">
+<div class="bottom">
 Powered by AI • Climate Intelligence • Farmer Protection
 </div>
 
 </div>
 
-</div>
+<script>
 
-<script src="script.js"></script>
+function goNext(){
+
+window.location.href="onboarding.html";
+
+}
+
+</script>
 
 </body>
 </html>

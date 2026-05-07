@@ -4,108 +4,337 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgriNEXA Dashboard</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+padding:35px;
+
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:60px;
+font-weight:bold;
+color:#e5ff00;
+text-shadow:0 0 18px #e5ff00;
+}
+
+.welcome{
+color:white;
+font-size:24px;
+font-weight:bold;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(20,20,20,0.88);
+padding:28px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 25px rgba(229,255,0,0.1);
+}
+
+.card h2{
+color:#e5ff00;
+margin-bottom:18px;
+font-size:30px;
+}
+
+.card p{
+color:white;
+margin-bottom:12px;
+font-size:18px;
+line-height:1.6;
+}
+
+.big{
+font-size:70px;
+font-weight:bold;
+color:#e5ff00;
+margin:10px 0;
+}
+
+.progress{
+width:100%;
+height:14px;
+background:#444;
+border-radius:20px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.bar{
+width:80%;
+height:100%;
+background:#e5ff00;
+}
+
+input,
+select{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:none;
+border-radius:12px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+background:#e5ff00;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.crop-image{
+width:100%;
+border-radius:18px;
+margin-top:12px;
+}
+
+</style>
 </head>
 
-<body class="farm-bg">
+<body>
 
-<div class="overlay"></div>
+<div class="top">
 
-<div class="dashboard-container">
-
-<div class="top-bar">
-
-<h1>AgriNEXA Intelligence Center</h1>
+<div class="logo">
+🌱 AgriNEXA AI
+</div>
 
 <div class="welcome">
-Welcome back, Sarah 👋
+Welcome back, <span id="welcomeName"></span> 👋
 </div>
 
 </div>
 
-<div class="dashboard-grid">
+<div class="grid">
 
 <div class="card">
-<h3>🧑‍🌾 Farmer Profile</h3>
-<p>Name: Sarah</p>
-<p>Region: Arusha</p>
-<p>Crop: Coffee</p>
-<p>Farm Size: 4 Acres</p>
-<p>Budget: 1,000,000 TZS</p>
-</div>
 
-<div class="card">
-<h3>🌱 Farm Health</h3>
-<div class="big-number">92%</div>
-<p>AI detects strong crop performance and healthy environmental conditions.</p>
-</div>
+<h2>👨‍🌾 Farmer Profile</h2>
 
-<div class="card">
-<h3>💰 Expected Profit</h3>
-<div class="big-number">480K</div>
-<p>Projected seasonal profit based on AI crop intelligence and market demand.</p>
+<p><strong>Name:</strong> <span id="nameData"></span></p>
+<p><strong>Region:</strong> <span id="regionData"></span></p>
+<p><strong>Crop:</strong> <span id="cropData"></span></p>
+<p><strong>Farm Size:</strong> <span id="farmSizeData"></span> Acres</p>
+<p><strong>Budget:</strong> <span id="budgetData"></span> TZS</p>
+<p><strong>Insurance:</strong> <span id="insuranceData"></span></p>
+<p><strong>Provider:</strong> <span id="providerData"></span></p>
+
 </div>
 
 <div class="card">
-<h3>🌧 Weather Risk</h3>
-<div class="big-number">LOW</div>
-<p>No major climate disruption expected this season.</p>
+
+<h2>🌱 Farm Health</h2>
+
+<div class="big">92%</div>
+
+<p>
+AI detects strong crop performance and healthy environmental conditions.
+</p>
+
 </div>
 
 <div class="card">
-<h3>🧠 Farmer Wellbeing</h3>
-<p>Current emotional state: worried</p>
+
+<h2>💰 Expected Profit</h2>
+
+<div class="big">480K</div>
+
+<p>
+Projected seasonal profit based on AI crop intelligence and market demand.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>⛈ Weather Risk</h2>
+
+<div class="big">LOW</div>
+
+<p>
+No major climate disruption expected this season.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧠 Farmer Wellbeing</h2>
+
+<p>
+Current emotional state:
+<span id="emotionData"></span>
+</p>
 
 <div class="progress">
-<span></span>
+<div class="bar"></div>
 </div>
 
 </div>
 
 <div class="card">
-<h3>🤖 AI Farming Assistant</h3>
+
+<h2>🤖 AI Farming Assistant</h2>
+
 <p>
 Coffee demand in Arusha is projected to rise next month.
 </p>
+
+<p>
+Recommended action:
+Increase harvest preparation and storage planning.
+</p>
+
 </div>
 
 <div class="card">
-<h3>📷 Crop Disease Scanner</h3>
+
+<h2>📷 Crop Disease Scanner</h2>
+
+<img
+src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop"
+class="crop-image">
 
 <input type="file">
 
-<button class="small-btn">
+<button>
 Scan Plant
 </button>
 
 </div>
 
 <div class="card">
-<h3>🌍 Market Intelligence</h3>
+
+<h2>🌍 Market Intelligence</h2>
 
 <p>📍 Best Market: Arusha City</p>
 <p>💵 Crop Price: 12,000 TZS/kg</p>
 <p>📈 Demand Level: HIGH</p>
+<p>📊 Prices expected to rise next week</p>
 
 </div>
 
 <div class="card">
 
-<h3>📊 Smart Profit Forecast</h3>
+<h2>📊 Smart Profit Forecast</h2>
 
 <input type="number" placeholder="Seeds Cost">
+
 <input type="number" placeholder="Fertilizer Cost">
+
 <input type="number" placeholder="Labour Cost">
 
-<button class="small-btn">
+<button>
 Generate AI Forecast
 </button>
 
 </div>
 
+<div class="card">
+
+<h2>🛡 AgriNEXA Farm Shield</h2>
+
+<p>✔ Climate Damage Protection</p>
+<p>✔ Pest Outbreak Coverage</p>
+<p>✔ Crop Failure Support</p>
+
+<div class="big">18K</div>
+
+<p>Monthly protection estimate.</p>
+
+<button>
+Activate Farm Shield
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>💗 Emotional Support AI</h2>
+
+<select>
+<option>😊 Motivated</option>
+<option>😟 Stressed</option>
+<option>😔 Tired</option>
+</select>
+
+<button>
+Check Mental Support
+</button>
+
+<p style="margin-top:15px;">
+AgriNEXA wellness support ready.
+</p>
+
 </div>
 
 </div>
+
+<script>
+
+document.getElementById("welcomeName").innerText =
+localStorage.getItem("farmerName");
+
+document.getElementById("nameData").innerText =
+localStorage.getItem("farmerName");
+
+document.getElementById("regionData").innerText =
+localStorage.getItem("region");
+
+document.getElementById("cropData").innerText =
+localStorage.getItem("crop");
+
+document.getElementById("farmSizeData").innerText =
+localStorage.getItem("farmSize");
+
+document.getElementById("budgetData").innerText =
+localStorage.getItem("budget");
+
+document.getElementById("insuranceData").innerText =
+localStorage.getItem("insurance");
+
+document.getElementById("providerData").innerText =
+localStorage.getItem("insuranceProvider");
+
+document.getElementById("emotionData").innerText =
+localStorage.getItem("emotion");
+
+</script>
 
 </body>
 </html>

@@ -3,33 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AgriNEXA Loading</title>
-<link rel="stylesheet" href="style.css">
+<title>Loading...</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+font-family:Arial;
+color:#e5ff00;
+}
+
+.loader{
+width:120px;
+height:120px;
+border:12px solid #333;
+border-top:12px solid #e5ff00;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:25px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+h1{
+font-size:42px;
+text-shadow:0 0 18px #e5ff00;
+}
+
+</style>
 </head>
 
-<body class="farm-bg">
-
-<div class="overlay"></div>
-
-<div class="loading-container">
+<body>
 
 <div class="loader"></div>
 
-<h1>AgriNEXA AI</h1>
-
-<p>
-Analyzing climate...<br>
-Scanning crop intelligence...<br>
-Generating smart predictions...
-</p>
-
-</div>
+<h1>Generating Smart AI Insights...</h1>
 
 <script>
 
-setTimeout(() => {
-window.location.href = "dashboard.html";
-}, 4000);
+setTimeout(function(){
+
+window.location.href="dashboard.html";
+
+},3000);
 
 </script>
 
